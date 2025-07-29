@@ -12,10 +12,10 @@ spec:
       labels:
         app: iris-api
     spec:
-      serviceAccountName: # gke-sa # Important for pod authentication
+      serviceAccountName: pravinadmin
       containers:
       - name: iris-api
-        image: # us-central1-docker.pkg.dev/YOUR_PROJECT_ID/iris-repo/iris-api:latest
+        image: us-central1-docker.pkg.dev/rare-keep-460211-q6/iris-repo/iris-api:latest
         ports:
         - containerPort: 8000
         resources:
