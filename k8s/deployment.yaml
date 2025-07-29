@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: iris-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: iris-api
+  template:
+    metadata:
+      labels:
+        app: iris-api
+    spec:
+      serviceAccountName: # gke-sa # Important for pod authentication
+      containers:
+      - name: iris-api
+        image: # us-central1-docker.pkg.dev/YOUR_PROJECT_ID/iris-repo/iris-api:latest
+        ports:
+        - containerPort: 8000
+        resources:
+          requests:
+            cpu: "250m"
+          limits:
+            cpu: "500m"
