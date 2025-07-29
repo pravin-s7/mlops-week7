@@ -12,7 +12,6 @@ spec:
       labels:
         app: iris-api
     spec:
-      serviceAccountName: pravinadmin
       containers:
       - name: iris-api
         image: us-central1-docker.pkg.dev/rare-keep-460211-q6/iris-repo/iris-api:latest
